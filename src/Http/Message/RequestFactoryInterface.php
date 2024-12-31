@@ -17,9 +17,10 @@ interface RequestFactoryInterface
 
 
     /**
+     * @param MessageFactoryInterface $messageFactory
      * @return ServerRequestInterface
      */
-    public function createRequest(): ServerRequestInterface;
+    public function createRequest(MessageFactoryInterface $messageFactory): ServerRequestInterface;
 
 
     /** @var string */
