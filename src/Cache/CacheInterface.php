@@ -23,4 +23,18 @@ interface CacheInterface extends PsrSimpleCacheInterface
         string|array $namespace,
         bool $replace = false
     ): self;
+
+
+    /**
+     * @template T
+     * @param string $key
+     * @param (callable(mixed $v):(T|null)) $toValue
+     * @param mixed $default
+     * @return T|null
+     */
+    public function getT(
+        string $key,
+        callable $toValue,
+        mixed $default = null
+    ): mixed;
 }
