@@ -16,7 +16,11 @@ interface CacheInterface extends PsrSimpleCacheInterface
 
     /**
      * @param string|string[] $namespace
+     * @param bool $replace
      * @return self
      */
-    public function withNamespace(string|array $namespace): self;
+    public function withNamespace(
+        string|array $namespace,
+        bool $replace = false
+    ): self;
 }
