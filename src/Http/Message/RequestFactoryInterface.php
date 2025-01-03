@@ -21,26 +21,4 @@ interface RequestFactoryInterface
      * @return ServerRequestInterface
      */
     public function createRequest(MessageFactoryInterface $messageFactory): ServerRequestInterface;
-
-
-    /** @var string */
-    public const HEAD = 'HEAD';
-    /** @var string */
-    public const GET = 'GET';
-    /** @var string */
-    public const POST = 'POST';
-    /** @var string */
-    public const PUT = 'PUT';
-    /** @var string */
-    public const PATCH = 'PATCH';
-    /** @var string */
-    public const DELETE = 'DELETE';
-    /** @var string */
-    public const PURGE = 'PURGE';
-    /** @var string */
-    public const OPTIONS = 'OPTIONS';
-    /** @var string */
-    public const TRACE = 'TRACE';
-    /** @var string */
-    public const CONNECT = 'CONNECT';
 }
