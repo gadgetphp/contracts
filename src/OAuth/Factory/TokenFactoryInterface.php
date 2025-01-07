@@ -6,6 +6,7 @@ namespace Gadget\OAuth\Factory;
 
 use Gadget\OAuth\Entity\AuthRequestInterface;
 use Gadget\OAuth\Entity\AuthResponseInterface;
+use Gadget\OAuth\Entity\AuthServerInterface;
 use Gadget\OAuth\Entity\TokenInterface;
 
 interface TokenFactoryInterface
@@ -21,8 +22,12 @@ interface TokenFactoryInterface
 
 
     /**
+     * @param AuthServerInterface $authServer
      * @param TokenInterface $token
      * @return TokenInterface
      */
-    public function refreshToken(TokenInterface $token): TokenInterface;
+    public function refreshToken(
+        AuthServerInterface $authServer,
+        TokenInterface $token
+    ): TokenInterface;
 }
