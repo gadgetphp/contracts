@@ -7,24 +7,18 @@ namespace Gadget\Process;
 interface ProcessInterface
 {
     /**
-     * Gets the command line to be executed.
-     *
      * @return string
      */
     public function getCommandLine(): string;
 
 
     /**
-     * Gets the environment variables.
-     *
      * @return (string|\Stringable)[]
      */
     public function getEnv(): array;
 
 
     /**
-     * Sets the environment variables.
-     *
      * @param (string|\Stringable)[] $env The new environment variables
      * @return self
      */
@@ -32,33 +26,25 @@ interface ProcessInterface
 
 
     /**
-     * Gets the working directory.
-     *
      * @return string
      */
     public function getWorkingDirectory(): string;
 
 
     /**
-     * Sets the current working directory.
-     *
      * @return self
      */
     public function setWorkingDirectory(string $cwd): self;
 
 
     /**
-     * Gets the Process input.
-     *
      * @return resource|string|\Iterator|null
      */
     public function getInput(): mixed;
 
 
     /**
-     * Sets the input.
-     *
-     * @param resource|string|\Iterator|null
+     * @param resource|string|\Iterator|null $input
      * @return self
      */
     public function setInput(mixed $input): self;
@@ -77,28 +63,63 @@ interface ProcessInterface
     public function setOutputCallback(callable|null $output): self;
 
 
+    /**
+     * @return float|null
+     */
     public function getTimeout(): float|null;
+
+
+    /**
+     * @param float|null $timeout
+     * @return self
+     */
     public function setTimeout(float|null $timeout): self;
 
 
+    /**
+     * @return float|null
+     */
     public function getIdleTimeout(): float|null;
+
+
+    /**
+     * @param float|null $timeout
+     * @return static
+     */
     public function setIdleTimeout(float|null $timeout): static;
 
 
+    /**
+     * @return int|null
+     */
     public function getExitCode(): int|null;
+
+
+    /**
+     * @return string|null
+     */
     public function getExitCodeText(): string|null;
 
 
+    /**
+     * @return bool
+     */
     public function hasBeenSignaled(): bool;
+
+
+    /**
+     * @return int|null
+     */
     public function getSignal(): int|null;
 
 
+    /**
+     * @return string
+     */
     public function getStatus(): string;
 
 
     /**
-     * Runs the process.
-     *
      * @param bool $throwOnError
      * @return int
      */
@@ -106,21 +127,38 @@ interface ProcessInterface
 
 
     /**
-     * Starts the process and returns after writing the input to `STDIN`.
-     *
      * @return int
      */
     public function start(): int;
 
 
+    /**
+     * @return int
+     */
     public function wait(): int;
 
 
+    /**
+     * @param callable $callback
+     * @return bool
+     */
     public function waitUntil(callable $callback): bool;
 
 
+    /**
+     * @param int $signal
+     * @return self
+     */
     public function signal(int $signal): self;
 
 
-    public function stop(float $timeout = 10, int|null $signal = null): ?int;
+    /**
+     * @param float $timeout
+     * @param int|null $signal
+     * @return int|null
+     */
+    public function stop(
+        float $timeout = 10,
+        int|null $signal = null
+    ): int|null;
 }
