@@ -7,10 +7,21 @@ namespace Gadget\OAuth\Entity;
 interface TokenInterface
 {
     /**
-     * @param 'access'|'refresh'|'id' $name
-     * @return string
+     * @return string|null
      */
-    public function getToken(string $name): string|null;
+    public function getAccessToken(): string|null;
+
+
+    /**
+     * @return string|null
+     */
+    public function getIdToken(): string|null;
+
+
+    /**
+     * @return string|null
+     */
+    public function getRefreshToken(): string|null;
 
 
     /**
