@@ -7,7 +7,6 @@ namespace Gadget\OAuth\Factory;
 use Gadget\OAuth\Entity\AuthRequestInterface;
 use Gadget\OAuth\Entity\AuthServerInterface;
 use Gadget\OAuth\Entity\PkceInterface;
-use Psr\Http\Message\ResponseInterface;
 
 interface AuthRequestFactoryInterface
 {
@@ -61,11 +60,4 @@ interface AuthRequestFactoryInterface
         string|null $idTokenHint = null,
         string|null $loginTokenHint = null
     ): AuthRequestInterface;
-
-
-    /**
-     * @param AuthRequestInterface $authRequest
-     * @return ResponseInterface
-     */
-    public function toHttpResponse(AuthRequestInterface $authRequest): ResponseInterface;
 }

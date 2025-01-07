@@ -13,15 +13,6 @@ namespace Gadget\OAuth\Entity;
 interface AuthResponseInterface
 {
     /**
-     * The request that this is in response to. Note: This isn't part of the spec but is included in order to simplify
-     * the workflow.
-     *
-     * @return AuthRequestInterface
-     */
-    public function getAuthRequest(): AuthRequestInterface;
-
-
-    /**
      * Authorization code which the client will later exchange for an access token.
      *
      * @return string
