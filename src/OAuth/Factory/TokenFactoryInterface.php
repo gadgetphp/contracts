@@ -26,7 +26,7 @@ interface TokenFactoryInterface
 
     /**
      * @param TokenInterface $token
-     * @return mixed
+     * @return TokenInterface
      */
     public function refreshToken(TokenInterface $token): TokenInterface;
 }
