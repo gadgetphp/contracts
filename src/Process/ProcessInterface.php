@@ -7,9 +7,59 @@ namespace Gadget\Process;
 interface ProcessInterface
 {
     /**
-     * @return string
+     * @param bool $throwOnError
+     * @return self
      */
-    public function getCommandLine(): string;
+    public function run(bool $throwOnError = false): self;
+
+
+    /**
+     * @return self
+     */
+    public function start(): self;
+
+
+    /**
+     * @return self
+     */
+    public function wait(): self;
+
+
+    /**
+     * @param callable $callback
+     * @return self
+     */
+    public function waitUntil(callable $callback): self;
+
+
+    /**
+     * @param int $signal
+     * @return self
+     */
+    public function signal(int $signal): self;
+
+
+    /**
+     * @param float $timeout
+     * @param int|null $signal
+     * @return self
+     */
+    public function stop(
+        float $timeout = 10,
+        int|null $signal = null
+    ): self;
+
+    /**
+     * @return string[]
+     */
+    public function getCommand(): array;
+
+
+    /**
+     * @param string[] $command
+     * @return self
+     */
+    public function setCommand(array $command): self;
 
 
     /**
@@ -117,48 +167,4 @@ interface ProcessInterface
      * @return string
      */
     public function getStatus(): string;
-
-
-    /**
-     * @param bool $throwOnError
-     * @return int
-     */
-    public function run(bool $throwOnError = false): int;
-
-
-    /**
-     * @return int
-     */
-    public function start(): int;
-
-
-    /**
-     * @return int
-     */
-    public function wait(): int;
-
-
-    /**
-     * @param callable $callback
-     * @return bool
-     */
-    public function waitUntil(callable $callback): bool;
-
-
-    /**
-     * @param int $signal
-     * @return self
-     */
-    public function signal(int $signal): self;
-
-
-    /**
-     * @param float $timeout
-     * @param int|null $signal
-     * @return int|null
-     */
-    public function stop(
-        float $timeout = 10,
-        int|null $signal = null
-    ): int|null;
 }
