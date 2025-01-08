@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Gadget\OAuth\Factory;
 
 use Gadget\OAuth\Entity\AuthResponseInterface;
-use Psr\Http\Message\RequestInterface;
 
 interface AuthResponseFactoryInterface
 {
@@ -25,11 +24,4 @@ interface AuthResponseFactoryInterface
         string|null $errorDescription = null,
         string|null $errorUri = null
     ): AuthResponseInterface;
-
-
-    /**
-     * @param RequestInterface $request
-     * @return AuthResponseInterface
-     */
-    public function createFromRequest(RequestInterface $request): AuthResponseInterface;
 }
