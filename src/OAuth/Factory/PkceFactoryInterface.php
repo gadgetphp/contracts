@@ -9,6 +9,13 @@ use Gadget\OAuth\Entity\PkceInterface;
 interface PkceFactoryInterface
 {
     /**
+     * @param mixed $values
+     * @return PkceInterface
+     */
+    public function create(mixed $values): PkceInterface;
+
+
+    /**
      * @param string $method
      * @return PkceInterface
      */

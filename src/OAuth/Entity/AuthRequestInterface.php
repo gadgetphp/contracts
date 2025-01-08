@@ -158,4 +158,10 @@ interface AuthRequestInterface
      */
     public function getLoginTokenHint(): string|null;
 #endregion OpenID Connect properties
+
+
+    /**
+     * @return string
+     */
+    public function getUri(): string;
 }

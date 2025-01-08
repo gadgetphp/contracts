@@ -9,6 +9,13 @@ use Gadget\OAuth\Entity\AuthResponseInterface;
 interface AuthResponseFactoryInterface
 {
     /**
+     * @param mixed $values
+     * @return AuthResponseInterface
+     */
+    public function create(mixed $values): AuthResponseInterface;
+
+
+    /**
      * @param string $code
      * @param string $state
      * @param string|null $error

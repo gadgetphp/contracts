@@ -11,6 +11,13 @@ use Gadget\OAuth\Entity\PkceInterface;
 interface AuthRequestFactoryInterface
 {
     /**
+     * @param mixed $values
+     * @return AuthRequestInterface
+     */
+    public function create(mixed $values): AuthRequestInterface;
+
+
+    /**
      * @param AuthServerInterface|null $authServer
      * @param string|null $redirectUri
      * @param string|null $scope

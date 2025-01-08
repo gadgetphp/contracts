@@ -12,6 +12,13 @@ use Gadget\OAuth\Entity\TokenInterface;
 interface TokenFactoryInterface
 {
     /**
+     * @param mixed $values
+     * @return TokenInterface
+     */
+    public function create(mixed $values): TokenInterface;
+
+
+    /**
      * @param AuthResponseInterface $authResponse
      * @return TokenInterface
      */
