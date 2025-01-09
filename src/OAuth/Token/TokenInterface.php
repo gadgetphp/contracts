@@ -7,6 +7,18 @@ namespace Gadget\OAuth\Token;
 interface TokenInterface
 {
     /**
+     * @return IdTokenInterface|null
+     */
+    public function getIdToken(): IdTokenInterface|null;
+
+
+    /**
+     * @return string
+     */
+    public function getTokenType(): string;
+
+
+    /**
      * @return string|null
      */
     public function getAccessToken(): string|null;
@@ -15,19 +27,7 @@ interface TokenInterface
     /**
      * @return string|null
      */
-    public function getIdToken(): string|null;
-
-
-    /**
-     * @return string|null
-     */
     public function getRefreshToken(): string|null;
-
-
-    /**
-     * @return string
-     */
-    public function getTokenType(): string;
 
 
     /**
