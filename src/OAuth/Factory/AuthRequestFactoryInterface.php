@@ -26,7 +26,7 @@ interface AuthRequestFactoryInterface
      *
      * @return AuthRequestInterface
      */
-    public function createOAuthRequest(
+    public function createAuthCodeRequest(
         AuthServerInterface|null $authServer = null,
         string|null $redirectUri = null,
         string|null $scope = null,
@@ -37,6 +37,7 @@ interface AuthRequestFactoryInterface
 
     /**
      * @param AuthServerInterface|null $authServer
+     * @param string $responseType
      * @param string|null $redirectUri
      * @param string|null $scope
      * @param string|null $state
@@ -52,8 +53,9 @@ interface AuthRequestFactoryInterface
      *
      * @return AuthRequestInterface
      */
-    public function createOIDCRequest(
+    public function createImplicitRequest(
         AuthServerInterface|null $authServer = null,
+        string $responseType = 'id_token',
         string|null $redirectUri = null,
         string|null $scope = null,
         string|null $state = null,

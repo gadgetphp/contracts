@@ -13,20 +13,55 @@ namespace Gadget\OAuth\Entity;
 interface AuthResponseInterface
 {
     /**
-     * Authorization code which the client will later exchange for an access token.
-     *
-     * @return string
-     */
-    public function getCode(): string;
-
-
-    /**
      * If the auth request contained a `state` parameter, the response must also include the exact value from the
      * request. The client will be using this to associate this response with the initial request.
      *
      * @return string
      */
     public function getState(): string;
+
+
+    /**
+     * REQUIRED for OIDC. ID Token.
+     *
+     * @return string|null
+     */
+    public function getIdToken(): string|null;
+
+
+    /**
+     * OAuth 2.0 Access Token. This is returned unless the `response_type` value used is `id_token`.
+     *
+     * @return string|null
+     */
+    public function getAccessToken(): string|null;
+
+
+    /**
+     * OAuth 2.0 Token Type value. The value MUST be `Bearer` or another `token_type` value that the Client has
+     * negotiated with the Authorization Server. Clients implementing this profile MUST support the OAuth 2.0 Bearer
+     * Token Usage [RFC6750] specification. This profile only describes the use of bearer tokens. This is returned in
+     * the same cases as `access_token` is.
+     *
+     * @return string|null
+     */
+    public function getTokenType(): string|null;
+
+
+    /**
+     * OPTIONAL. Expiration time of the Access Token in seconds since the response was generated.
+     *
+     * @return int|null
+     */
+    public function getExpiresIn(): int|null;
+
+
+    /**
+     * Authorization code which the client will later exchange for an access token.
+     *
+     * @return string|null
+     */
+    public function getCode(): string|null;
 
 
     /**
