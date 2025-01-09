@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Gadget\OAuth\Entity;
+namespace Gadget\OAuth\Pkce;
 
 /**
  * Proof Key for Code Exchange (abbreviated PKCE, pronounced “pixie”) is an extension to the authorization code flow to

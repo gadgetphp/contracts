@@ -2,9 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Gadget\OAuth\Factory;
-
-use Gadget\OAuth\Entity\AuthServerInterface;
+namespace Gadget\OAuth\Server;
 
 interface AuthServerFactoryInterface
 {

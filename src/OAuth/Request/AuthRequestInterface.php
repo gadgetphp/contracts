@@ -2,7 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Gadget\OAuth\Entity;
+namespace Gadget\OAuth\Request;
+
+use Gadget\OAuth\Pkce\PkceInterface;
+use Gadget\OAuth\Server\AuthServerInterface;
 
 /**
  * Represents the request sent to the authorization server to begin the OAuth process. Clients may use either the

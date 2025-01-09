@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Gadget\OAuth\Entity;
+namespace Gadget\OAuth\Response;
 
 /**
  * Represents the response from the authorization server to a given authorization request.

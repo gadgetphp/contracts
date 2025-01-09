@@ -2,12 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Gadget\OAuth\Factory;
+namespace Gadget\OAuth\Token;
 
-use Gadget\OAuth\Entity\AuthRequestInterface;
-use Gadget\OAuth\Entity\AuthResponseInterface;
-use Gadget\OAuth\Entity\AuthServerInterface;
-use Gadget\OAuth\Entity\TokenInterface;
+use Gadget\OAuth\Request\AuthRequestInterface;
+use Gadget\OAuth\Response\AuthResponseInterface;
+use Gadget\OAuth\Server\AuthServerInterface;
 
 interface TokenFactoryInterface
 {

@@ -2,9 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Gadget\OAuth\Factory;
-
-use Gadget\OAuth\Entity\PkceInterface;
+namespace Gadget\OAuth\Pkce;
 
 interface PkceFactoryInterface
 {

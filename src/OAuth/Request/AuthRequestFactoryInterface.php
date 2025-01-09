@@ -2,11 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Gadget\OAuth\Factory;
+namespace Gadget\OAuth\Request;
 
-use Gadget\OAuth\Entity\AuthRequestInterface;
-use Gadget\OAuth\Entity\AuthServerInterface;
-use Gadget\OAuth\Entity\PkceInterface;
+use Gadget\OAuth\Pkce\PkceInterface;
+use Gadget\OAuth\Server\AuthServerInterface;
 
 interface AuthRequestFactoryInterface
 {
