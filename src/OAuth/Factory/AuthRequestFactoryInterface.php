@@ -53,7 +53,7 @@ interface AuthRequestFactoryInterface
      *
      * @return AuthRequestInterface
      */
-    public function createImplicitRequest(
+    public function createImplicitFlowRequest(
         AuthServerInterface|null $authServer = null,
         string $responseType = 'id_token',
         string|null $redirectUri = null,
